@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
-project_name ="wine-quality-mle-pipeline"
+project_name ="wine_quality_mle_pipeline"
 
 list_of_files =[
     '.github/workflows/.gitkeep',
