@@ -34,6 +34,7 @@ MANIFEST
 
 # Installer logs
 pip-log.txt
+logs/
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
@@ -216,3 +217,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+artifacts/
