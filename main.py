@@ -2,6 +2,7 @@ from src.wine_quality_mle_pipeline import logger
 from src.wine_quality_mle_pipeline.pipeline.data_ingestion_pipeline import DataIngestionTrainingPipeline
 from src.wine_quality_mle_pipeline.pipeline.data_validation_pipeline import DataValidationPipeline
 from src.wine_quality_mle_pipeline.pipeline.data_transformation_pipeline import DataTransformationPipeline
+from src.wine_quality_mle_pipeline.pipeline.model_trainer_pipeline import ModelTrainerPipeline
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -32,3 +33,12 @@ except Exception as e:
     logger.exception(e)
     raise e
 
+STAGE_NAME = "Model Training Stage"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    obj = ModelTrainerPipeline()
+    obj.initiate_model_training()
+except Exception as e:
+    logger.excpetion(e)
+    raise e
