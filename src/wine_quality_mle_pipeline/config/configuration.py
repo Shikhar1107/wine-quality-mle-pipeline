@@ -1,7 +1,7 @@
 from src.wine_quality_mle_pipeline.constants import *
 from src.wine_quality_mle_pipeline.utils.common import *
 
-from src.wine_quality_mle_pipeline.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig)
+from src.wine_quality_mle_pipeline.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig)
 
 class ConfigurationManager:
     def __init__(self, config_filepath=CONFIG_FILE_PATH, params_filepath = PARAMS_FILE_PATH, schema_filepath = SCHEMA_FILE_PATH):
@@ -61,3 +61,20 @@ class ConfigurationManager:
             target_column = schema.NAME,
         )
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMNS
+        create_directories([config.root_dir])
+
+        model_eval_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+            test_data_path = config.test_data_path,
+            model_path= config.model_path,
+            metric_file_name = config.metric_file_name,
+            all_params = params,
+            target_column = schema.NAME,
+            mlflow_uri = os.getenv('MLFLOW_TRACKING_URI'),
+        )
+        return model_eval_config

@@ -4,6 +4,13 @@ from src.wine_quality_mle_pipeline import logger
 from sklearn.linear_model import ElasticNet
 from src.wine_quality_mle_pipeline.entity.config_entity import ModelTrainerConfig
 import joblib
+from dotenv import load_dotenv
+load_dotenv()
+
+MLFLOW_TRACKING_URI = os.getenv('MLFLOW_TRACKING_URI')
+MLFLOW_TRACKING_USERNAME = os.getenv('MLFLOW_TRACKING_USERNAME')
+MLFLOW_TRACKING_PASSWORD = os.getenv('MLFLOW_TRACKING_PASSWORD')
+
 
 class ModelTrainer:
     def __init__(self,config: ModelTrainerConfig):
