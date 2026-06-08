@@ -8,7 +8,7 @@ from src.wine_quality_mle_pipeline.pipeline.model_evaluation_pipeline import Mod
 STAGE_NAME = "Data Ingestion Stage"
 
 try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\nx===================x")
     obj = DataIngestionTrainingPipeline()
     obj.initiate_data_ingestion()
 except Exception as e:
@@ -18,7 +18,7 @@ except Exception as e:
 STAGE_NAME = "Data Validation Stage"
 
 try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\nx===================x")
     obj = DataValidationPipeline()
     obj.initiate_data_validation()
 except Exception as e:
@@ -27,7 +27,7 @@ except Exception as e:
 
 STAGE_NAME = "Data Transformation Stage"
 try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\nx===================x")
     obj = DataTransformationPipeline()
     obj.initiate_data_transformation()
 except Exception as e:
@@ -37,7 +37,7 @@ except Exception as e:
 STAGE_NAME = "Model Training Stage"
 
 try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\nx===================x")
     obj = ModelTrainerPipeline()
     obj.initiate_model_training()
 except Exception as e:
@@ -47,7 +47,7 @@ except Exception as e:
 STAGE_NAME = "Model Evaluation Stage"
 
 try:
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\n===================x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<\n\nx===================x")
     obj = ModelEvaluationPipeline()
     obj.inititate_model_eval()
 except Exception as e:
